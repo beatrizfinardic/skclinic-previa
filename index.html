@@ -20,7 +20,7 @@
 /* Paleta alinhada ao Instagram da Dra. (verde #3C412B dos posts, verde profundo #2B3010 do logo, brancos frios) e ao vídeo: fundo claro e faixas verde-oliva alternadas, terracota nos detalhes, a pílula do logo como forma-assinatura. */
 :root{
   --bg:#FAFAF7; --sand:#E7E8DF; --sand2:#F1F2EC; --white:#FFFFFF;
-  --olive:#3C412B; --olive2:#2B3010; --terra:#A57361; --terra-l:#C9A07C;
+  --olive:#3C412B; --olive2:#2B3010; --terra:#A57361; --terra-d:#8C5E4D; --terra-l:#C9A07C;
   --ink:#1E201A; --ink2:#3B3E33; --muted:#6B6E5C; --cream:#F5F5F0; --cream2:#C9CCB8; --line:#DCDDD3;
   --wa:#1F7A4C;
   --font:"Jost",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -50,21 +50,21 @@ section{padding-block:72px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:500 .98rem/1 var(--font);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .15s ease,background .15s ease}
 .btn:hover{transform:translateY(-1px)}
 .btn:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
-.btn-wa{background:var(--olive);color:var(--cream)}
-.btn-wa:hover{background:var(--olive2)}
-.btn-ghost{border-color:var(--olive);color:var(--olive);background:transparent}
+.btn-wa{background:var(--terra);color:var(--white)}
+.btn-wa:hover{background:var(--terra-d)}
+.btn-ghost{border-color:var(--terra);color:var(--terra-d);background:transparent}
 .on-dark .btn-wa{background:var(--terra);color:var(--white)}
 .on-dark .btn-ghost{border-color:var(--terra-l);color:var(--cream)}
 .wa-ico{width:19px;height:19px;flex:none}
 
 /* topo fixo */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:21}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--olive);border-bottom:1px solid rgba(201,160,124,.35)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--olive);z-index:21}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
 .top img{height:34px;width:auto}
-.top nav{display:none;gap:26px;font-size:.92rem;color:var(--ink2)}
+.top nav{display:none;gap:28px;font-size:.92rem;color:var(--cream2)}
 .top nav a{text-decoration:none}
-.top nav a:hover{color:var(--terra)}
+.top nav a:hover{color:var(--terra-l)}
 .top .btn{min-height:42px;padding:0 18px;font-size:.88rem}
 .sm-m{display:none}
 @media (max-width:640px){.sm-d{display:none}.sm-m{display:inline}}
@@ -250,12 +250,12 @@ footer .legal{border-top:1px solid rgba(201,160,124,.25);padding-top:22px;font-s
 .dark .pill-line .dots{stroke:var(--terra-l)}
 
 /* faixa de especialidades que corre devagar */
-.ribbon{overflow:hidden;border-block:1px solid var(--line);background:var(--bg);padding-block:18px}
+.ribbon{overflow:hidden;background:var(--terra);padding-block:18px}
 .ribbon-track{display:flex;width:max-content;animation:ribbon 48s linear infinite}
 .ribbon:hover .ribbon-track{animation-play-state:paused}
 .ribbon-set{display:flex;align-items:center;gap:34px;padding-right:34px}
-.ribbon span{font-family:var(--display);font-weight:300;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--olive);white-space:nowrap}
-.ribbon i{flex:none;width:10px;height:17px;border:1.5px solid var(--terra);border-radius:999px}
+.ribbon span{font-family:var(--display);font-weight:300;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--white);white-space:nowrap}
+.ribbon i{flex:none;width:10px;height:17px;border:1.5px solid rgba(255,255,255,.7);border-radius:999px}
 
 /* revelar ao rolar */
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
@@ -304,12 +304,12 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
 .btn-wa:hover{background-position:0 0}
 .on-dark .btn-wa{background-image:linear-gradient(90deg,var(--terra-l) 0 50%,transparent 50%)}
 .btn-ghost{transition:background .3s ease,color .3s ease,transform .2s ease}
-.btn-ghost:hover{background:var(--olive);color:var(--cream)}
+.btn-ghost:hover{background:var(--terra);color:var(--white)}
 .on-dark .btn-ghost:hover{background:var(--cream);color:var(--olive)}
 
 /* topo e botão flutuante */
 .top{transition:box-shadow .3s ease}
-.top.scrolled{box-shadow:0 6px 24px rgba(43,48,16,.08)}
+.top.scrolled{box-shadow:0 6px 24px rgba(43,48,16,.22)}
 .js .float{transform:translateY(130%);transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .js .float.show{transform:none}
 .float.show .btn{animation:pulse 2.4s ease 1s 2}
@@ -333,7 +333,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
 
 <header class="top">
   <div class="wrap">
-    <a href="#inicio" aria-label="SK Care Clinic, início"><img src="img/logo-olive.png" alt="SK Clinic, cuidados integrados" width="111" height="34"></a>
+    <a href="#inicio" aria-label="SK Care Clinic, início"><img src="img/logo-cream.png" alt="SK Clinic, cuidados integrados" width="111" height="34"></a>
     <nav aria-label="Seções">
       <a href="#objetivos">Tratamentos</a>
       <a href="#recomeco">Programa Recomeço</a>
