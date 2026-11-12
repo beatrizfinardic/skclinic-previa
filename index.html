@@ -93,12 +93,29 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .dark{background:var(--olive);color:var(--cream)}
 .dark .eyebrow{color:var(--terra-l)}
 .dark .lead{color:var(--cream2)}
-.pains{display:grid;gap:12px;margin-top:34px}
-.pain{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border:1px solid rgba(201,160,124,.3);border-radius:20px;color:var(--cream2);font-size:1.02rem}
-.pain b{color:var(--cream);font-weight:500;display:block;font-size:1.08rem;margin-bottom:2px}
-.pain::before{content:"";flex:none;width:12px;height:20px;margin-top:5px;border:1.5px solid var(--terra-l);border-radius:999px}
-@media (min-width:760px){.pains{grid-template-columns:1fr 1fr}}
-.dark .closing{margin-top:34px;font-size:1.6rem;line-height:1.3;color:var(--cream);max-width:36ch}
+.pains{display:grid;gap:14px;margin-top:38px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.pain{display:flex;flex-direction:column;gap:18px;padding:26px 20px 24px;border:1px solid rgba(201,160,124,.28);border-radius:28px;color:var(--cream2);font-size:.98rem;line-height:1.5;background:rgba(242,239,230,.03)}
+.pain b{color:var(--cream);font-weight:500;display:block;font-size:1.06rem;margin-bottom:6px;line-height:1.3}
+.pain-ico{position:relative;width:84px;height:84px;border-radius:50%;border:1px solid rgba(201,160,124,.5);display:grid;place-items:center;color:var(--terra-l)}
+.pain-ico::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1.5px dotted rgba(201,160,124,.55);animation:spin 40s linear infinite}
+.pain-ico svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.pain-ico .fill{fill:currentColor;stroke:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:420px){.pain{padding:22px 16px}.pain-ico{width:68px;height:68px}.pain-ico svg{width:36px;height:36px}}
+@media (min-width:980px){.pains{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.integra{display:grid;gap:30px;align-items:center;margin-top:46px;padding-top:40px;border-top:1px solid rgba(201,160,124,.22)}
+.integra>*{min-width:0}
+.dark .closing{margin:0;font-size:1.6rem;line-height:1.3;color:var(--cream);max-width:24ch}
+.integra-svg{width:100%;max-width:300px;justify-self:center;overflow:visible}
+.integra-svg circle{fill:none;stroke:var(--terra-l);stroke-width:1.1;opacity:.75}
+.integra-svg .ring-dots{stroke-dasharray:1 6;stroke-linecap:round;opacity:.5;transform-origin:160px 160px;animation:spin 60s linear infinite}
+.integra-svg .core{fill:var(--terra-l)}
+.integra-svg text{fill:var(--cream);font:400 13px var(--font);letter-spacing:.06em;text-anchor:middle;text-transform:uppercase}
+@media (min-width:860px){.integra{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}.dark .closing{font-size:2rem}}
+.prog{margin:4px 0 6px;padding:18px 20px;border-radius:20px;background:var(--cream);border:1px solid var(--line)}
+.prog-tag{display:inline-block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--white);background:var(--terra);border-radius:999px;padding:4px 12px;margin-bottom:10px}
+.prog p{margin:0 0 8px}.prog b{color:var(--ink);font-weight:600}
+.prog-link{color:var(--terra);font-weight:500;font-size:.95rem;text-underline-offset:4px}
 
 /* objetivos */
 .goals{display:grid;gap:14px;margin-top:36px}
@@ -245,8 +262,12 @@ footer .legal{border-top:1px solid rgba(201,160,124,.25);padding-top:22px;font-s
 .js img.rv-img.in{transform:none;opacity:1;clip-path:inset(0 0 0 0 round 0)}
 
 /* ícone-pílula que se preenche */
-.pain::before{transition:background .6s ease .3s}
-.pain.in::before{background:var(--terra-l)}
+.js .pain-ico svg [pathLength]{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1) .25s}
+.js .pain.in .pain-ico svg [pathLength]{stroke-dashoffset:0}
+.js .integra-svg [pathLength]{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2s cubic-bezier(.4,0,.2,1)}
+.js .integra-svg.in [pathLength]{stroke-dashoffset:0}
+.js .integra-svg [pathLength]:nth-of-type(3){transition-delay:.25s}.js .integra-svg [pathLength]:nth-of-type(4){transition-delay:.5s}.js .integra-svg [pathLength]:nth-of-type(5){transition-delay:.75s}
+.js .integra-svg text,.js .integra-svg .core{opacity:0;transition:opacity .8s ease 1.2s}.js .integra-svg.in text,.js .integra-svg.in .core{opacity:1}
 
 /* contadores */
 .weeks .n,.weeks .sep,.weeks small{display:inline-block}
@@ -295,7 +316,8 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .rv,.js img.rv-img,.js .hero [data-seq],.js .hero h1 .ln>span,.js .weeks .n,.js .weeks .sep,.js .weeks small{opacity:1!important;transform:none!important;clip-path:none!important}
   .js .score:not(.in) .stars span{color:var(--terra);transform:none}
-  .js .pill-line .solid{stroke-dashoffset:0}
+  .js .pill-line .solid,.js .pain-ico svg [pathLength],.js .integra-svg [pathLength]{stroke-dashoffset:0!important}
+  .js .integra-svg text,.js .integra-svg .core{opacity:1!important}
   .steps::before{transform:none!important}
   .js .float{transform:none}
 }
@@ -350,12 +372,22 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
     <span class="eyebrow">Para quem é</span>
     <h2 class="h2">Você sente que algo não vai bem, mesmo quando os exames dizem que está tudo normal?</h2>
     <div class="pains">
-      <div class="pain"><div><b>Cansaço que não passa</b>Nem com uma boa noite de sono, nem no fim de semana.</div></div>
-      <div class="pain"><div><b>O peso que sempre volta</b>Você já tentou dietas, remédios e academia, e o resultado não se sustenta.</div></div>
-      <div class="pain"><div><b>Calorões, sono ruim e libido baixa</b>A menopausa chegou e mudou a sua rotina.</div></div>
-      <div class="pain"><div><b>Um corpo que não responde como antes</b>Pele, cabelo, disposição e humor pedindo atenção.</div></div>
+      <div class="pain"><div class="pain-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M37 13a19 19 0 1 0 15 29A16 16 0 0 1 37 13z"/><path pathLength="1" d="M48 12v6M45 15h6M54 24v4M52 26h4"/></svg></div><div><b>Cansaço que não passa</b>Nem com uma boa noite de sono, nem no fim de semana.</div></div>
+      <div class="pain"><div class="pain-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><path pathLength="1" d="M15 32a17 17 0 0 1 29-12"/><path pathLength="1" d="M45 12v8h-8"/><path pathLength="1" d="M49 32a17 17 0 0 1-29 12"/><path pathLength="1" d="M19 52v-8h8"/><rect pathLength="1" x="27" y="26" width="10" height="13" rx="5"/></svg></div><div><b>O peso que sempre volta</b>Você já tentou dietas, remédios e academia, e o resultado não se sustenta.</div></div>
+      <div class="pain"><div class="pain-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><rect pathLength="1" x="22" y="10" width="11" height="31" rx="5.5"/><circle pathLength="1" cx="27.5" cy="46" r="8"/><circle class="fill" cx="27.5" cy="46" r="4"/><path pathLength="1" d="M27.5 42V24"/><path pathLength="1" d="M42 18c3 3-3 6 0 9s-3 6 0 9M50 22c3 3-3 6 0 9s-3 6 0 9"/></svg></div><div><b>Calorões, sono ruim e libido baixa</b>A menopausa chegou e mudou a sua rotina.</div></div>
+      <div class="pain"><div class="pain-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><rect pathLength="1" x="20" y="8" width="24" height="48" rx="12"/><path pathLength="1" d="M20 36c6-4 12 4 18 0s5-3 6-3"/><path pathLength="1" d="M50 14v8M46 18h8"/></svg></div><div><b>Um corpo que não responde como antes</b>Pele, cabelo, disposição e humor pedindo atenção.</div></div>
     </div>
-    <p class="closing">Aqui, hormônios, nutrição, metabolismo e intestino são avaliados juntos, para encontrar o que está por trás de cada sintoma.</p>
+    <div class="integra">
+      <p class="closing">Aqui, hormônios, nutrição, metabolismo e intestino são avaliados juntos, para encontrar o que está por trás de cada sintoma.</p>
+      <svg class="integra-svg" viewBox="0 0 320 320" role="img" aria-label="Hormônios, nutrição, metabolismo e intestino avaliados juntos">
+        <circle class="ring-dots" cx="160" cy="160" r="150"/>
+        <circle pathLength="1" cx="128" cy="128" r="62"/><circle pathLength="1" cx="192" cy="128" r="62"/>
+        <circle pathLength="1" cx="128" cy="192" r="62"/><circle pathLength="1" cx="192" cy="192" r="62"/>
+        <rect class="core" x="148" y="140" width="24" height="40" rx="12"/>
+        <text x="96" y="104">Hormônios</text><text x="224" y="104">Nutrição</text>
+        <text x="96" y="226">Metabolismo</text><text x="224" y="226">Intestino</text>
+      </svg>
+    </div>
   </div>
 </section>
 
@@ -374,8 +406,12 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
           <img src="img/bioimpedancia.jpg" alt="Bioimpedância durante o acompanhamento" loading="lazy" width="1400" height="933">
           <div>
             <p class="quote">Emagrecer sem perder músculo, com acompanhamento médico de perto.</p>
-            <p>No Programa Recomeço, cada etapa é ajustada ao seu corpo: avaliação, plano individual e acompanhamento semanal.</p>
-            <h4>O que inclui</h4>
+            <div class="prog">
+              <span class="prog-tag">Programa Recomeço</span>
+              <p>É o programa de emagrecimento da clínica: <b>4, 8 ou 12 semanas</b> de acompanhamento médico, com bioimpedância toda semana e o plano ajustado a cada etapa, para o resultado se sustentar depois.</p>
+              <a class="prog-link" href="#recomeco">Ver como funciona o programa →</a>
+            </div>
+            <h4>O que o programa inclui</h4>
             <ul><li>Bioimpedância semanal</li><li>Preservação da massa muscular</li><li>Terapia farmacológica, quando indicada</li><li>Terapias injetáveis complementares</li></ul>
             <p class="note">A indicação de cada tratamento depende de avaliação médica individual.</p>
             <a class="btn btn-wa" data-wa="Quero saber sobre o Programa Recomeço." href="#"><svg class="wa-ico"><use href="#wa"/></svg>Quero saber sobre o Recomeço</a>
@@ -472,7 +508,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
       <span class="eyebrow">Programa Recomeço</span>
       <h2 class="h2">Um novo capítulo começa com cuidado.</h2>
       <div class="weeks" data-rv-self><span class="n" style="--i:0">4</span><span class="sep" style="--i:1">·</span><span class="n" style="--i:1">8</span><span class="sep" style="--i:2">·</span><span class="n" style="--i:2">12</span> <small style="--i:3">semanas</small></div>
-      <p class="lead">Um programa individualizado de emagrecimento, de acordo com os objetivos de cada paciente.</p>
+      <p class="lead">O programa de emagrecimento da SK, para quem já tentou de tudo e viu o peso voltar. Você faz uma avaliação completa, define com a médica a duração do programa e é acompanhada de perto toda semana.</p>
       <ul class="pillars">
         <li>Acompanhamento médico</li><li>Bioimpedância semanal</li>
         <li>Terapia farmacológica, quando indicada</li><li>Terapias injetáveis complementares</li>
@@ -621,7 +657,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
 
   // ===== movimento =====
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var rvSel = "section:not(.hero) .eyebrow, section:not(.hero) .h2, section:not(.hero) .lead, .pain, .closing, .goal, .step, blockquote, .link-arrow, .pillars li, .faq details, .final .btn, .final img, footer .wrap>*, .recomeco .btn, .recomeco .pill-wrap, .dra .crm, .dra .focus, .dra .btn";
+  var rvSel = "section:not(.hero) .eyebrow, section:not(.hero) .h2, section:not(.hero) .lead, .pain, .closing, .integra-svg, .goal, .step, blockquote, .link-arrow, .pillars li, .faq details, .final .btn, .final img, footer .wrap>*, .recomeco .btn, .recomeco .pill-wrap, .dra .crm, .dra .focus, .dra .btn";
   var groups = new Map();
   document.querySelectorAll(rvSel).forEach(function(el){
     el.classList.add("rv");
