@@ -263,10 +263,10 @@ footer .legal{border-top:1px solid rgba(201,160,124,.25);padding-top:22px;font-s
 
 /* ícone-pílula que se preenche */
 .js .pain-ico svg [pathLength],.js .integra-svg [pathLength]{stroke-dasharray:1;stroke-dashoffset:1}
-.js .pain.in .pain-ico svg [pathLength]{animation:draw 1.6s cubic-bezier(.4,0,.2,1) .25s forwards}
-.js .integra-svg.in [pathLength]{animation:draw 2s cubic-bezier(.4,0,.2,1) forwards}
+.js .pain.in .pain-ico svg [pathLength]{animation:drawln 1.6s cubic-bezier(.4,0,.2,1) .25s forwards}
+.js .integra-svg.in [pathLength]{animation:drawln 2s cubic-bezier(.4,0,.2,1) forwards}
 .js .integra-svg.in [pathLength]:nth-of-type(3){animation-delay:.25s}.js .integra-svg.in [pathLength]:nth-of-type(4){animation-delay:.5s}.js .integra-svg.in [pathLength]:nth-of-type(5){animation-delay:.75s}
-@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes drawln{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .js .integra-svg text,.js .integra-svg .core{opacity:0;transition:opacity .8s ease 1.2s}.js .integra-svg.in text,.js .integra-svg.in .core{opacity:1}
 
 /* contadores */
