@@ -8,7 +8,7 @@
 <meta property="og:title" content="SK Care Clinic Jundiaí | Cuidamos da causa, não só do sintoma">
 <meta property="og:description" content="Emagrecimento, menopausa, saúde hormonal, fertilidade e pele, com um plano pensado só para você.">
 <meta property="og:image" content="img/dra-clinica.jpg">
-<meta name="theme-color" content="#2B3010">
+<meta name="theme-color" content="#3C412B">
 <!-- PRÉVIA: remover a linha abaixo quando o site for para o domínio oficial -->
 <meta name="robots" content="noindex, nofollow">
 <script>document.documentElement.classList.replace("no-js","js")</script>
@@ -17,11 +17,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Jost:wght@300;400;500;600&display=swap">
 <style>
-/* Identidade do vídeo da sala de espera: fundo claro e faixas verde-oliva alternadas, terracota nos detalhes, a pílula do logo como forma-assinatura. */
+/* Paleta alinhada ao Instagram da Dra. (verde #3C412B dos posts, verde profundo #2B3010 do logo, brancos frios) e ao vídeo: fundo claro e faixas verde-oliva alternadas, terracota nos detalhes, a pílula do logo como forma-assinatura. */
 :root{
-  --bg:#FAF8F4; --sand:#E9E1D3; --sand2:#F1ECE3; --white:#FFFFFF;
-  --olive:#2B3010; --olive2:#3A4118; --terra:#A57361; --terra-l:#C9A07C;
-  --ink:#1F1E19; --ink2:#3D3C33; --muted:#6F6B59; --cream:#F2EFE6; --cream2:#D4CFBE; --line:#DDD5C6;
+  --bg:#FAFAF7; --sand:#E7E8DF; --sand2:#F1F2EC; --white:#FFFFFF;
+  --olive:#3C412B; --olive2:#2B3010; --terra:#A57361; --terra-l:#C9A07C;
+  --ink:#1E201A; --ink2:#3B3E33; --muted:#6B6E5C; --cream:#F5F5F0; --cream2:#C9CCB8; --line:#DCDDD3;
   --wa:#1F7A4C;
   --font:"Jost",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --display:"Fraunces",Georgia,serif;
@@ -58,7 +58,7 @@ section{padding-block:72px}
 .wa-ico{width:19px;height:19px;flex:none}
 
 /* topo fixo */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(250,248,244,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:21}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
 .top img{height:34px;width:auto}
@@ -66,7 +66,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .top nav a{text-decoration:none}
 .top nav a:hover{color:var(--terra)}
 .top .btn{min-height:42px;padding:0 18px;font-size:.88rem}
-.topbar{background:var(--olive);color:var(--cream2);font-size:.8rem;letter-spacing:.02em}
+.topbar{background:var(--olive2);color:var(--cream2);font-size:.8rem;letter-spacing:.02em}
 .top .topbar .wrap{height:34px;gap:12px}
 .topbar b{color:var(--cream);font-weight:500}
 .topbar a{color:var(--terra-l);text-decoration:none;white-space:nowrap;font-weight:500}.topbar a:hover{text-decoration:underline}
@@ -214,7 +214,7 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;font-size:.86rem
 .final .btn{margin-top:28px}
 
 /* rodapé */
-footer{background:var(--olive);color:var(--cream2);padding-block:56px calc(110px + env(safe-area-inset-bottom,0px));font-size:.94rem}
+footer{background:var(--olive2);color:var(--cream2);padding-block:56px calc(110px + env(safe-area-inset-bottom,0px));font-size:.94rem}
 footer .wrap{display:grid;gap:34px}
 footer img{height:44px;width:auto}
 footer h4{margin:0 0 10px;color:var(--terra-l);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
@@ -223,7 +223,7 @@ footer .legal{border-top:1px solid rgba(201,160,124,.25);padding-top:22px;font-s
 @media (min-width:820px){footer .wrap{grid-template-columns:1.2fr 1fr 1fr 1fr}footer{padding-bottom:56px}}
 
 /* botão flutuante (celular) */
-.float{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(to top,rgba(250,248,244,1) 55%,rgba(250,248,244,0))}
+.float{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(to top,rgba(250,250,247,1) 55%,rgba(250,250,247,0))}
 .float .btn{width:100%;box-shadow:0 8px 24px rgba(43,48,16,.25)}
 @media (min-width:820px){.float{left:auto;background:none;width:auto}.float .btn{width:auto}}
 
@@ -357,7 +357,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
   <div class="wrap">
     <div>
       <p class="welcome" data-seq style="--d:100">Que bom ter você aqui. Veja com calma todos os nossos cuidados.</p>
-      <span class="eyebrow" data-seq style="--d:200">Medicina integrativa · Jundiaí e online</span>
+      <span class="eyebrow" data-seq style="--d:200">Medicina integrativa · Jundiaí<span class="tb-d"> e online</span></span>
       <h1><span class="ln"><span style="--d:350">Cuidamos da causa,</span></span> <span class="ln"><span style="--d:520"><em>não só do sintoma.</em></span></span></h1>
       <p class="lead" data-seq style="--d:800">Emagrecimento, menopausa, saúde hormonal, fertilidade e pele, com uma avaliação completa e um plano pensado só para você.</p>
       <div class="hero-cta" data-seq style="--d:980">
