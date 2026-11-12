@@ -28,7 +28,7 @@
   --gutter:max(20px,env(safe-area-inset-left,0px));
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
@@ -66,6 +66,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .top nav a{text-decoration:none}
 .top nav a:hover{color:var(--terra)}
 .top .btn{min-height:42px;padding:0 18px;font-size:.88rem}
+.topbar{background:var(--olive);color:var(--cream2);font-size:.8rem;letter-spacing:.02em}
+.top .topbar .wrap{height:34px;gap:12px}
+.topbar b{color:var(--cream);font-weight:500}
+.topbar a{color:var(--terra-l);text-decoration:none;white-space:nowrap;font-weight:500}.topbar a:hover{text-decoration:underline}
+.tb-m{display:none}
+@media (max-width:640px){.topbar .tb-x,.tb-d{display:none}.tb-m{display:inline}.topbar{font-size:.76rem}}
 @media (min-width:900px){.top nav{display:flex}}
 
 /* pílula */
@@ -330,6 +336,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
 </svg>
 
 <header class="top">
+  <div class="topbar"><div class="wrap"><span><b class="tb-d">Atendimento presencial em Jundiaí e online</b><b class="tb-m">Presencial em Jundiaí e online</b><span class="tb-x"> · consulte de qualquer cidade</span></span><a data-wa="Gostaria de agendar uma consulta online." href="#">Agendar online →</a></div></div>
   <div class="wrap">
     <a href="#inicio" aria-label="SK Care Clinic, início"><img src="img/logo-olive.png" alt="SK Clinic, cuidados integrados" width="111" height="34"></a>
     <nav aria-label="Seções">
@@ -350,7 +357,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
   <div class="wrap">
     <div>
       <p class="welcome" data-seq style="--d:100">Que bom ter você aqui. Veja com calma todos os nossos cuidados.</p>
-      <span class="eyebrow" data-seq style="--d:200">Medicina integrativa · Jundiaí</span>
+      <span class="eyebrow" data-seq style="--d:200">Medicina integrativa · Jundiaí e online</span>
       <h1><span class="ln"><span style="--d:350">Cuidamos da causa,</span></span> <span class="ln"><span style="--d:520"><em>não só do sintoma.</em></span></span></h1>
       <p class="lead" data-seq style="--d:800">Emagrecimento, menopausa, saúde hormonal, fertilidade e pele, com uma avaliação completa e um plano pensado só para você.</p>
       <div class="hero-cta" data-seq style="--d:980">
@@ -358,7 +365,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
         <a class="btn btn-ghost" href="#objetivos">Qual é o seu objetivo?</a>
       </div>
       <p class="hero-dra" data-seq style="--d:1100"><b>Dra. Jacqueline Sampaio</b> · Médica · CRM-SP 160977 <span class="todo">confirmar CRM e RQE</span></p>
-      <div class="hero-meta" data-seq style="--d:1250"><span>One Office Tower, 16º andar</span><span>5,0 no Google</span><span>Atendimento particular</span></div>
+      <div class="hero-meta" data-seq style="--d:1250"><span>One Office Tower, 16º andar</span><span>5,0 no Google</span><span>Presencial e online</span><span>Atendimento particular</span></div>
     </div>
     <div class="pill-wrap"><svg class="pill-line" viewBox="0 0 100 143" preserveAspectRatio="none" aria-hidden="true"><rect class="solid" x="0" y="0" width="100" height="143" rx="50" ry="50" pathLength="100"/><rect class="dots" x="-4" y="-4" width="108" height="151" rx="54" ry="54" pathLength="100"/></svg><div class="pill-frame"><img src="img/dra-retrato.jpg" alt="Dra. Jacqueline Sampaio" width="933" height="1400"></div></div>
   </div>
@@ -588,7 +595,7 @@ details[open] .chev{transform:rotate(180deg);background:var(--terra-l)}
       <details><summary>Como faço para agendar?</summary><p>Pelo WhatsApp. Toque em qualquer botão desta página e a recepção responde com os horários disponíveis.</p></details>
       <details><summary>Onde fica a clínica?</summary><p>The One Office Tower, Rua Hilda Del Nero Bisquolo, 102, sala 1602 (16º andar), Jardim Florida, Jundiaí/SP.</p></details>
       <details><summary>Atende por convênio?</summary><p>O atendimento é particular. <span class="todo">confirmar e incluir se emite recibo para reembolso</span></p></details>
-      <details><summary>Atende online?</summary><p><span class="todo">confirmar com a clínica</span></p></details>
+      <details><summary>Atende online?</summary><p>Sim. A consulta pode ser feita por videochamada, de qualquer cidade. Alguns cuidados, como bioimpedância, implantes hormonais e terapias injetáveis, são feitos presencialmente na clínica, em Jundiaí.</p></details>
       <details><summary>Quanto tempo dura a primeira consulta?</summary><p><span class="todo">confirmar com a clínica</span></p></details>
       <details><summary>Tem estacionamento?</summary><p><span class="todo">confirmar com a clínica</span></p></details>
     </div>
